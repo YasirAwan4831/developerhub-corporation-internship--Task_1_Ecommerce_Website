@@ -29,11 +29,10 @@
 
 | Resource | Link | Status |
 |----------|------|--------|
-| 🌍 **Live Website** | [View Demo](https://YasirAwan4831.github.io/ecommerce-website) | ![Online](https://img.shields.io/badge/Status-Online-success) |
-| 📦 **GitHub Repository** | [Source Code](https://github.com/yourusername/ecommerce-website) | ![Public](https://img.shields.io/badge/Repo-Public-blue) |
+| 🌍 **Live Website** | [View Demo]https://yasirawan-devhub-corporation-intern.netlify.app/) | ![Online](https://img.shields.io/badge/Status-Online-success) |
+| 📦 **GitHub Repository** | [Source Code](https://github.com/YasirAwan4831/developerhub-corporation-internship--Task_1_Ecommerce_Website) | ![Public](https://img.shields.io/badge/Repo-Public-blue) |
 | 🎥 **Video Walkthrough** | [Watch on YouTube](https://www.youtube.com/@YasirTech-t1d) | ![HD](https://img.shields.io/badge/Quality-HD-red) |
 |  | ![Complete](https://img.shields.io/badge/-Complete-green) |
-
 </div>
 
 ## Project Overview
