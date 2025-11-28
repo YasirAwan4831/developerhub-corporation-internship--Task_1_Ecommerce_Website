@@ -17,7 +17,7 @@
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-View_My_Work-9cf?style=for-the-badge)](https://yourportfolio.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yourprofile)
-[![GitHub Profile](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/yourusername)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/YasirAwan4831/)
 
 </div>
 
@@ -313,14 +313,7 @@ If you have VS Code with Live Server extension:
 - Select "Open with Live Server"
 - The website will open at `http://localhost:5500`
 
-**Step 4: Install Dependencies (Optional)**
 
-If you want to use npm scripts for development:
-
-```bash
-npm install
-npm start
-```
 
 This will install development tools and start a local server.
 
@@ -442,7 +435,7 @@ While this project demonstrates a complete front-end implementation, there are s
 
 **Submission Date:** 28 Nov, 2025
 
-**Supervisor:** Sir faizan Khan
+**Supervisor:** Sir Faizan Khan
 
 ### Acknowledgments
 
