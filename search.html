@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - E-Commerce Website</title>
+    
+    <!-- Website Favicon -->
+    <link rel="icon" type="image/png" href="assets/Layout/Form/input-group/Icon/control/Vector.png">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+    
+    <!-- TOP BAR SECTION -->
+    <header class="top-bar">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html" class="logo-icon">
+                <img src="assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+            </a>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search products..." aria-label="Search">
+                <select class="category-dropdown" id="categoryDropdown" aria-label="Category">
+                    <option value="">All category</option>
+                    <option value="automobiles">Automobiles</option>
+                    <option value="clothes">Clothes and wear</option>
+                    <option value="home">Home interiors</option>
+                    <option value="tech">Computer and tech</option>
+                    <option value="tools">Tools, equipments</option>
+                    <option value="sports">Sports and outdoor</option>
+                    <option value="pets">Animal and pets</option>
+                    <option value="machinery">Machinery tools</option>
+                </select>
+                <button class="search-btn" type="button">Search</button>
+            </div>
+        </div>
+
+        <!-- User Actions -->
+        <nav class="top-icons">
+            <a href="#" class="icon-item" aria-label="Profile">
+                <i class="far fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="icon-item" aria-label="Messages">
+                <i class="far fa-comment"></i>
+                <span>Message</span>
+            </a>
+            <a href="#" class="icon-item" aria-label="Orders">
+                <i class="far fa-heart"></i>
+                <span>Orders</span>
+            </a>
+            <a href="/cart.html" class="icon-item" aria-label="Shopping Cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span>My cart</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="nav-bar">
+        <!-- Left Navigation -->
+        <div class="nav-left">
+            <button class="nav-item active" id="allCategoryBtn">
+                <i class="fas fa-bars"></i> All category
+            </button>
+            <a href="#" class="nav-item">Hot offers</a>
+            <a href="#" class="nav-item">Gift boxes</a>
+            <a href="#" class="nav-item">Projects</a>
+            <a href="#" class="nav-item">Menu item</a>
+            <a href="#" class="nav-item">
+                Help <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+
+        <!-- Right Navigation -->
+        <div class="nav-right">
+            <select class="language-select" aria-label="Language and Currency">
+                <option value="en-usd">English, USD</option>
+                <option value="ur-pkr">Urdu, PKR</option>
+            </select>
+            <div class="ship-to">
+                <span>Ship to</span>
+                <img src="assets/Layout1/Image/flags/DE@2x.png" alt="Germany Flag" width="20" height="14">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB NAVIGATION -->
+    <nav class="breadcrumb-section" aria-label="Breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="index.html" class="breadcrumb-link">Home</a>
+            <span class="breadcrumb-separator" aria-hidden="true">›</span>
+            <a href="#" class="breadcrumb-link">Clothings</a>
+            <span class="breadcrumb-separator" aria-hidden="true">›</span>
+            <a href="#" class="breadcrumb-link">Men's wear</a>
+            <span class="breadcrumb-separator" aria-hidden="true">›</span>
+            <span class="breadcrumb-current" aria-current="page">Summer clothing</span>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        
+        <!-- SECTION A - PRODUCT DETAIL HERO -->
+        <section class="product-detail-hero">
+            <div class="product-detail-container">
+                
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="main-product-image">
+                        <img src="assets/Layout/alibaba/Image/cloth/Bitmap.png" alt="Mens Long Sleeve T-shirt" id="mainImage">
+                    </div>
+                    
+                    <div class="thumbnail-gallery">
+                        <button class="thumbnail-item active" type="button">
+                            <img src="assets/Layout/alibaba/Image/cloth/Bitmap.png" alt="Product view 1">
+                        </button>
+                        <button class="thumbnail-item" type="button">
+                            <img src="assets/Layout/alibaba/Image/cloth/Bitmap.png" alt="Product view 2">
+                        </button>
+                        <button class="thumbnail-item" type="button">
+                            <img src="assets/Layout/alibaba/Image/cloth/Bitmap.png" alt="Product view 3">
+                        </button>
+                        <button class="thumbnail-item" type="button">
+                            <img src="assets/Layout/alibaba/Image/cloth/Bitmap.png" alt="Product view 4">
+                        </button>
+                        <button class="thumbnail-item" type="button">
+                            <img src="assets/Layout/alibaba/Image/cloth/Bitmap.png" alt="Product view 5">
+                        </button>
+                        <button class="thumbnail-item" type="button">
+                            <img src="assets/Layout/alibaba/Image/cloth/Bitmap.png" alt="Product view 6">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Details -->
+                <div class="product-details">
+                    <div class="stock-badge">
+                        <i class="fas fa-check" aria-hidden="true"></i> In stock
+                    </div>
+
+                    <h1 class="product-title">Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h1>
+                    
+                    <div class="product-meta">
+                        <div class="rating-stars">
+                            <span class="stars" aria-label="4 out of 5 stars">★★★★</span><span class="star-empty" aria-hidden="true">★</span>
+                            <span class="rating-number">9.3</span>
+                        </div>
+                        <span class="meta-divider" aria-hidden="true">•</span>
+                        <div class="reviews-count">
+                            <i class="far fa-comment-dots" aria-hidden="true"></i>
+                            <span>32 reviews</span>
+                        </div>
+                        <span class="meta-divider" aria-hidden="true">•</span>
+                        <div class="sold-count">
+                            <i class="fas fa-box" aria-hidden="true"></i>
+                            <span>154 sold</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="price-box price-highlighted">
+                            <div class="price-amount">$98.00</div>
+                            <div class="price-range">50-100 pcs</div>
+                        </div>
+                        <div class="price-box">
+                            <div class="price-amount">$90.00</div>
+                            <div class="price-range">100-700 pcs</div>
+                        </div>
+                        <div class="price-box">
+                            <div class="price-amount">$78.00</div>
+                            <div class="price-range">700+ pcs</div>
+                        </div>
+                    </div>
+
+                    <dl class="product-specifications">
+                        <div class="spec-row">
+                            <dt class="spec-label">Price:</dt>
+                            <dd class="spec-value">Negotiable</dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt class="spec-label">Type:</dt>
+                            <dd class="spec-value">Classic shoes</dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt class="spec-label">Material:</dt>
+                            <dd class="spec-value">Plastic material</dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt class="spec-label">Design:</dt>
+                            <dd class="spec-value">Modern nice</dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt class="spec-label">Customization:</dt>
+                            <dd class="spec-value">Customized logo and design custom packages</dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt class="spec-label">Protection:</dt>
+                            <dd class="spec-value">Refund Policy</dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt class="spec-label">Warranty:</dt>
+                            <dd class="spec-value">2 years full warranty</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- Supplier Section -->
+                <aside class="supplier-section">
+                    <div class="supplier-card">
+                        <div class="supplier-header">
+                            <div class="supplier-avatar" aria-label="Supplier logo">R</div>
+                            <div class="supplier-info">
+                                <div class="supplier-label">Supplier</div>
+                                <div class="supplier-name">Guanjoi Trading LLC</div>
+                            </div>
+                        </div>
+
+                        <div class="supplier-details">
+                            <div class="supplier-detail-item">
+                                <img src="assets/Layout1/Image/flags/DE@2x.png" alt="Germany" class="country-flag" width="20" height="14">
+                                <span>Germany, Berlin</span>
+                            </div>
+                            <div class="supplier-detail-item">
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                <span>Verified Seller</span>
+                            </div>
+                            <div class="supplier-detail-item">
+                                <i class="fas fa-globe" aria-hidden="true"></i>
+                                <span>Worldwide shipping</span>
+                            </div>
+                        </div>
+
+                        <button class="send-inquiry-btn" type="button" onclick="window.location.href='/other-page/contact.html'">
+    Send inquiry
+</button>
+                        <button class="seller-profile-btn" type="button">Seller's profile</button>
+                    </div>
+
+                    <button class="save-later-btn" type="button">
+                        <i class="far fa-heart" aria-hidden="true"></i>
+                        <span>Save for later</span>
+                    </button>
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- SECTION B - PRODUCT TABS & RECOMMENDATIONS -->
+        <section class="product-tabs-section">
+            <div class="product-tabs-container">
+                
+                <!-- Tabs & Content -->
+                <div class="tabs-content-wrapper">
+                    
+                    <div class="tab-navigation" role="tablist">
+                        <button class="tab-btn active" data-tab="description" role="tab" aria-selected="true" aria-controls="description">Description</button>
+                        <button class="tab-btn" data-tab="reviews" role="tab" aria-selected="false" aria-controls="reviews">Reviews</button>
+                        <button class="tab-btn" data-tab="shipping" role="tab" aria-selected="false" aria-controls="shipping">Shipping</button>
+                        <button class="tab-btn" data-tab="about-seller" role="tab" aria-selected="false" aria-controls="about-seller">About seller</button>
+                    </div>
+
+                    <div class="tab-content-container">
+                        
+                        <!-- Description Tab -->
+                        <div class="tab-content active" id="description" role="tabpanel">
+                            <div class="description-text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            </div>
+
+                            <table class="specifications-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="spec-label">Model</td>
+                                        <td class="spec-value">#8786867</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-label">Style</td>
+                                        <td class="spec-value">Classic style</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-label">Certificate</td>
+                                        <td class="spec-value">ISO-898921212</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-label">Size</td>
+                                        <td class="spec-value">34mm x 450mm x 19mm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-label">Memory</td>
+                                        <td class="spec-value">36GB RAM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <ul class="features-list">
+                                <li>
+                                    <i class="fas fa-check" aria-hidden="true"></i>
+                                    <span>Some great feature name here</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check" aria-hidden="true"></i>
+                                    <span>Lorem ipsum dolor sit amet, consectetur</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check" aria-hidden="true"></i>
+                                    <span>Duis aute irure dolor in reprehenderit</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check" aria-hidden="true"></i>
+                                    <span>Some great feature name here</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Reviews Tab -->
+                        <div class="tab-content" id="reviews" role="tabpanel" hidden>
+                            <div class="reviews-summary">
+                                <h3>Customer Reviews</h3>
+                                <div class="overall-rating">
+                                    <div class="rating-number">4.5</div>
+                                    <div class="rating-stars">★★★★★</div>
+                                    <div class="rating-text">Based on 32 reviews</div>
+                                </div>
+                            </div>
+
+                            <article class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-name">John Doe</div>
+                                    <div class="review-stars">★★★★★</div>
+                                </div>
+                                <time class="review-date" datetime="2025-01-18">2 days ago</time>
+                                <p class="review-text">Great product! The quality is excellent and delivery was fast. Highly recommended!</p>
+                            </article>
+
+                            <article class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-name">Sarah Smith</div>
+                                    <div class="review-stars">★★★★☆</div>
+                                </div>
+                                <time class="review-date" datetime="2025-01-13">1 week ago</time>
+                                <p class="review-text">Good value for money. The material is nice but sizing runs a bit small.</p>
+                            </article>
+
+                            <article class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-name">Mike Johnson</div>
+                                    <div class="review-stars">★★★★★</div>
+                                </div>
+                                <time class="review-date" datetime="2025-01-06">2 weeks ago</time>
+                                <p class="review-text">Exceeded my expectations. Will definitely buy again!</p>
+                            </article>
+                        </div>
+
+                        <!-- Shipping Tab -->
+                        <div class="tab-content" id="shipping" role="tabpanel" hidden>
+                            <h3>Shipping Information</h3>
+                            
+                            <div class="shipping-info">
+                                <h4>Delivery Options</h4>
+                                <ul class="shipping-list">
+                                    <li><strong>Standard Shipping:</strong> 5-7 business days ($9.99)</li>
+                                    <li><strong>Express Shipping:</strong> 2-3 business days ($19.99)</li>
+                                    <li><strong>Overnight Shipping:</strong> Next business day ($29.99)</li>
+                                </ul>
+                            </div>
+
+                            <div class="shipping-info">
+                                <h4>Shipping Policy</h4>
+                                <p>We ship worldwide. All orders are processed within 1-2 business days. You will receive a tracking number once your order has been shipped.</p>
+                                <p>Free shipping on orders over $100.</p>
+                            </div>
+
+                            <div class="shipping-info">
+                                <h4>Return Policy</h4>
+                                <p>30-day money-back guarantee. Items must be returned in original condition with tags attached.</p>
+                            </div>
+                        </div>
+
+                        <!-- About Seller Tab -->
+                        <div class="tab-content" id="about-seller" role="tabpanel" hidden>
+                            <h3>About Guanjoi Trading LLC</h3>
+                            
+                            <div class="seller-info">
+                                <p>Guanjoi Trading LLC is a leading supplier of high-quality apparel and accessories. Based in Berlin, Germany, we have been serving customers worldwide since 2010.</p>
+                                
+                                <h4>Our Commitment</h4>
+                                <ul class="seller-list">
+                                    <li>✓ Verified and trusted seller</li>
+                                    <li>✓ Fast and reliable shipping</li>
+                                    <li>✓ Quality guaranteed products</li>
+                                    <li>✓ Excellent customer service</li>
+                                    <li>✓ Secure payment options</li>
+                                </ul>
+
+                                <h4>Business Information</h4>
+                                <div class="business-info">
+                                    <p><strong>Company Name:</strong> Guanjoi Trading LLC</p>
+                                    <p><strong>Location:</strong> Berlin, Germany</p>
+                                    <p><strong>Years in Business:</strong> 14 years</p>
+                                    <p><strong>Total Sales:</strong> 50,000+ orders</p>
+                                    <p><strong>Customer Rating:</strong> 4.8/5.0</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Recommendations Sidebar -->
+                <aside class="recommendations-sidebar">
+                    <h3 class="recommendations-title">You may like</h3>
+                    
+                    <div class="recommendations-list">
+                        
+                        <article class="recommendation-item">
+                            <div class="recommendation-image">
+                                <img src="assets/Layout/alibaba/Image/cloth/image 30.png" alt="Men Blazers Sets Elegant Formal">
+                            </div>
+                            <div class="recommendation-details">
+                                <h4 class="recommendation-name">Men Blazers Sets Elegant Formal</h4>
+                                <p class="recommendation-price">$7.00 - $99.50</p>
+                            </div>
+                        </article>
+
+                        <article class="recommendation-item">
+                            <div class="recommendation-image">
+                                <img src="assets/Layout/alibaba/Image/cloth/Bitmap.png" alt="Men Shirt Sleeve Polo Contrast">
+                            </div>
+                            <div class="recommendation-details">
+                                <h4 class="recommendation-name">Men Shirt Sleeve Polo Contrast</h4>
+                                <p class="recommendation-price">$7.00 - $99.50</p>
+                            </div>
+                        </article>
+
+                        <article class="recommendation-item">
+                            <div class="recommendation-image">
+                                <img src="assets/Layout/alibaba/Image/cloth/2 1.png" alt="Apple Watch Series Space Gray">
+                            </div>
+                            <div class="recommendation-details">
+                                <h4 class="recommendation-name">Apple Watch Series Space Gray</h4>
+                                <p class="recommendation-price">$7.00 - $99.50</p>
+                            </div>
+                        </article>
+
+                        <article class="recommendation-item">
+                            <div class="recommendation-image">
+                                <img src="assets/Layout/alibaba/Image/cloth/Bitmap (2).png" alt="Basketball Crew Socks Long Stuff">
+                            </div>
+                            <div class="recommendation-details">
+                                <h4 class="recommendation-name">Basketball Crew Socks Long Stuff</h4>
+                                <p class="recommendation-price">$7.00 - $99.50</p>
+                            </div>
+                        </article>
+
+                        <article class="recommendation-item">
+                            <div class="recommendation-image">
+                                <img src="assets/Layout/alibaba/Image/cloth/image 26.png" alt="New Summer Men's castrol T-Shirts">
+                            </div>
+                            <div class="recommendation-details">
+                                <h4 class="recommendation-name">New Summer Men's castrol T-Shirts</h4>
+                                <p class="recommendation-price">$7.00 - $99.50</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- SECTION C - RELATED PRODUCTS -->
+        <section class="related-products-section">
+            <div class="related-products-container">
+                
+                <h2 class="related-products-heading">Related products</h2>
+                
+                <div class="related-products-grid">
+                    
+                    <article class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="assets/Layout/alibaba/Image/cloth/image 24.png" alt="Xiaomi Redmi 8 Original">
+                        </div>
+                        <div class="related-product-info">
+                            <h3 class="related-product-name">Xiaomi Redmi 8 Original</h3>
+                            <p class="related-product-price">$32.00-$40.00</p>
+                        </div>
+                    </article>
+
+                    <article class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="assets/Image/tech/8.png" alt="Xiaomi Redmi 8 Original">
+                        </div>
+                        <div class="related-product-info">
+                            <h3 class="related-product-name">Xiaomi Redmi 8 Original</h3>
+                            <p class="related-product-price">$32.00-$40.00</p>
+                        </div>
+                    </article>
+
+                    <article class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="assets/Image/tech/image 86.png" alt="Xiaomi Redmi 8 Original">
+                        </div>
+                        <div class="related-product-info">
+                            <h3 class="related-product-name">Xiaomi Redmi 8 Original</h3>
+                            <p class="related-product-price">$32.00-$40.00</p>
+                        </div>
+                    </article>
+
+                    <article class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="assets/Layout/alibaba/Image/cloth/Bitmap (2).png" alt="Xiaomi Redmi 8 Original">
+                        </div>
+                        <div class="related-product-info">
+                            <h3 class="related-product-name">Xiaomi Redmi 8 Original</h3>
+                            <p class="related-product-price">$32.00-$40.00</p>
+                        </div>
+                    </article>
+
+                    <article class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="assets/Layout/alibaba/Image/tech/image 85.png" alt="Xiaomi Redmi 8 Original">
+                        </div>
+                        <div class="related-product-info">
+                            <h3 class="related-product-name">Xiaomi Redmi 8 Original</h3>
+                            <p class="related-product-price">$32.00-$40.00</p>
+                        </div>
+                    </article>
+
+                    <article class="related-product-card">
+                        <div class="related-product-image">
+                            <img src="assets/Image/interior/7.png" alt="Xiaomi Redmi 8 Original">
+                        </div>
+                        <div class="related-product-info">
+                            <h3 class="related-product-name">Xiaomi Redmi 8 Original</h3>
+                            <p class="related-product-price">$32.00-$40.00</p>
+                        </div>
+                    </article>
+
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- SECTION D - DISCOUNT BANNER -->
+        <section class="discount-banner-section">
+            <div class="discount-banner-container">
+                <div class="discount-banner">
+                    <div class="banner-content">
+                        <h2 class="banner-title">Super discount on more than 100 USD</h2>
+                        <p class="banner-text">Have you ever finally just write dummy info</p>
+                    </div>
+                    <button class="banner-btn" type="button">Shop now</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <!-- Footer Main -->
+        <section class="footer-main">
+            <div class="footer-main-container">
+                
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+                    </div>
+                    <p class="footer-brand-desc">Best information about the company goes here but now lorem ipsum is</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=100064279256569" class="social-icon" aria-label="Facebook">
+                            <img src="assets/social-icon/facebook.png" alt="">
+                        </a>
+                        <a href="https://x.com/YasirAwan4831" class="social-icon" aria-label="Twitter">
+                            <img src="assets/social-icon/twitter.png" alt="">
+                        </a>
+                        <a href="https://www.linkedin.com/in/yasirawan4831/" class="social-icon" aria-label="LinkedIn">
+                            <img src="assets/social-icon/linkedin.png" alt="">
+                        </a>
+                        <a href="https://www.instagram.com/yasirawan4831/" class="social-icon" aria-label="Instagram">
+                            <img src="assets/social-icon/instagram.png" alt="">
+                        </a>
+                        <a href="https://www.youtube.com/@YasirTech-t1d" class="social-icon" aria-label="YouTube">
+                            <img src="assets/social-icon/youtube.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                
+                <nav class="footer-column">
+                    <h3 class="footer-column-title">About</h3>
+                    <ul class="footer-links">
+                        <li><a href="/other-page/about-us.html">About Us</a></li>
+                        <li><a href="/other-page/find-store.html">Find store</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </nav>
+                
+                <nav class="footer-column">
+                    <h3 class="footer-column-title">Partnership</h3>
+                    <ul class="footer-links">
+                        <li><a href="/other-page/about-us.html">About Us</a></li>
+                        <li><a href="/other-page/find-store.html">Find store</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </nav>
+                
+                <nav class="footer-column">
+                    <h3 class="footer-column-title">Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="/other-page/help-center.html">Help Center</a></li>
+                        <li><a href="#">Money Refund</a></li>
+                        <li><a href="/other-page/Shipping.html">Shipping</a></li>
+                        <li><a href="/other-page/contact.html">Contact us</a></li>
+                    </ul>
+                </nav>
+                
+                <nav class="footer-column">
+                    <h3 class="footer-column-title">For users</h3>
+                    <ul class="footer-links">
+                        <li><a href="other-page/singin.html">Login</a></li>
+                        <li><a href="other-page/joinnow.html">Register</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">My Orders</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="footer-app">
+                    <h3 class="footer-column-title">Get app</h3>
+                    <a href="#" class="app-download" aria-label="Download on App Store">
+                        <img src="assets/Layout/Misc/market-button.png" alt="App Store">
+                    </a>
+                    <a href="#" class="app-download" aria-label="Get it on Google Play">
+                        <img src="assets/Layout/Misc/Group.png" alt="Google Play">
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p class="footer-copyright">© 2025 Muhammad Yasir. All rights reserved.</p>
+                
+                <div class="footer-language">
+                    <button class="language-btn" type="button" aria-label="Language selector">
+                        <img src="assets/Layout1/Image/flags/US@2x.png" alt="" class="language-flag" width="24" height="18">
+                        <span>English</span>
+                        <svg class="language-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="language-dropdown">
+                        <a href="#" class="language-option">
+                            <img src="assets/Layout1/Image/flags/CN@2x.png" alt="" class="language-flag" width="24" height="18">
+                            <span>Chinese</span>
+                        </a>
+                        <a href="#" class="language-option">
+                            <img src="assets/Layout1/Image/flags/RU@2x.png" alt="" class="language-flag" width="24" height="18">
+                            <span>Russian</span>
+                        </a>
+                        <a href="#" class="language-option">
+                            <img src="assets/Layout1/Image/flags/AE@2x.png" alt="" class="language-flag" width="24" height="18">
+                            <span>Arabic</span>
+                        </a>
+                        <a href="#" class="language-option">
+                            <img src="assets/Layout1/Image/flags/DK@@2x.png" alt="" class="language-flag" width="24" height="18">
+                            <span>Danish</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript File -->
+    <script src="js/search.js"></script>
+    
+</body>
+</html>

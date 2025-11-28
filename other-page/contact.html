@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" href="/assets/Layout/Form/input-group/Icon/control/Vector.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.7;
+            font-size: 18px; 
+        }
+
+        
+        .header {
+            background: white;
+            padding: 14px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-icon img { height: 45px; }
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 19px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #667eea; }
+        .language-select {
+            padding: 10px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 17px;
+            background: white;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1300px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .page-title {
+            text-align: center;
+            font-size: 48px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .page-subtitle {
+            text-align: center;
+            font-size: 22px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .contact-info, .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #000000;
+            margin-bottom: 30px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 28px;
+        }
+        .info-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(212, 205, 205);
+            font-size: 24px;
+            margin-right: 18px;
+            flex-shrink: 0;
+        }
+        .info-content h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        .info-content p, .info-content a {
+            color: #555;
+            font-size: 18px;
+        }
+        .info-content a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 17px;
+            transition: all 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #284ae6;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .form-group textarea { min-height: 140px; resize: vertical; }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #0732f1, #764ba2);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 19px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgb(224, 18, 18);
+            color: rgb(9, 235, 9);
+        }
+
+        /* Office Locations */
+        .office-locations {
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+        .location-card {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 14px;
+            transition: all 0.3s;
+        }
+        .location-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .location-card h3 {
+            font-size: 24px;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+        .location-card p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 60px 50px 30px;
+        }
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 50px;
+        }
+        .footer-column h3 {
+            color: #667eea;
+            font-size: 22px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 14px;
+            font-size: 17px;
+        }
+        .footer-links a:hover { color: #667eea; }
+        .social-links a {
+            font-size: 24px;
+            margin-right: 18px;
+            color: #cbd5e0;
+        }
+        .social-links a:hover { color: #667eea; }
+
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 17px;
+        }
+
+        @media (max-width: 768px) {
+            .header { padding: 14px 20px; flex-direction: column; gap: 15px; }
+            .nav-links { gap: 25px; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .page-title { font-size: 38px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="/assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/other-page/about-us.html">About Us</a></li>
+            <li><a href="/other-page/contact.html">Contact</a></li>
+        </ul>
+        <select class="language-select">
+            <option>English</option>
+            <option>Urdu</option>
+            <option>Arabic</option>
+        </select>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="page-subtitle">We're here to help! Reach out to us anytime.</p>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2 class="section-title">Get In Touch</h2>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-content">
+                        <h3>Head Office</h3>
+                        <p>Plot 123, Phase 5, DHA<br>Lahore, Punjab, Pakistan</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p>+92 300 12345670<br>+92 321 0000000</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>info@ourbrand.com<br>support@ourbrand.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <div class="info-content">
+                        <h3>Working Hours</h3>
+                        <p>Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-share-alt"></i></div>
+                    <div class="info-content">
+                        <h3>Follow Us</h3>
+                        <p>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2 class="section-title">Send Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone (Optional)</label>
+                        <input type="tel" id="phone" placeholder="+92 300 0000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" required>
+                            <option value="">Choose subject</option>
+                            <option>General Inquiry</option>
+                            <option>Order Support</option>
+                            <option>Technical Help</option>
+                            <option>Partnership</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" placeholder="How can we assist you today?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="office-locations">
+            <h2 class="section-title">Our Offices</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h3>Head Office - Lahore</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> DHA Phase 5, Lahore, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 300 01234567</p>
+                    <p><i class="fas fa-envelope"></i> info@ourbrand.com</p>
+                </div>
+                <div class="location-card">
+                    <h3>Branch Office - Karachi</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Clifton, Karachi, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 321 1121212121</p>
+                    <p><i class="fas fa-envelope"></i> karachi@ourbrand.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="/index.html">Home</a>
+                    <a href="/products.html">Products</a>
+                    <a href="/other-page/about-us.html">About Us</a>
+                    <a href="/other-page/contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <div class="footer-links">
+                    <a href="/other-page/about-us.html">FAQ</a>
+                    <a href="/other-page/Shipping.html">Shipping Info</a>
+                    <a href="#">Returns</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 Muhammad Yasir. All rights reserved.
+            </div>
+            <div class="footer-language">
+                <select>
+                    <option>English</option>
+                    <option>Urdu</option>
+                    <option>Arabic</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thank you ${name}! Your message has been sent successfully. We'll get back to you soon.`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>

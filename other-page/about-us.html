@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - E-Commerce</title>
+    <!-- Website Favicon -->
+    <link rel="icon" type="image/png" href="/assets/Layout/Form/input-group/Icon/control/Vector.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+      
+        .header {
+            background: white;
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-icon img { height: 42px; }
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px; 
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #050af8; }
+        .language-select {
+            padding: 8px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        /* Hero */
+        .hero-section {
+            background: linear-gradient(135deg, #062ee2 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero-content h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 23px;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Sections */
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 60px;
+            color: #333;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 90px;
+            height: 5px;
+            background: #667eea;
+            display: block;
+            margin: 18px auto;
+            border-radius: 3px;
+        }
+
+        /* Cards */
+        .about-card, .team-card, .value-item {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .about-card:hover, .team-card:hover { transform: translateY(-8px); }
+
+        .about-card i { font-size: 55px; color: #667eea; margin-bottom: 25px; }
+        .about-card h3, .value-item h3 { font-size: 28px; margin-bottom: 15px; }
+        .about-card p, .value-item p, .team-card p { font-size: 18px; color: #555; }
+
+        /* Stats */
+        .stats-section { background: #f8f9fa; padding: 80px 20px; }
+        .stat-number { font-size: 54px; font-weight: 800; color: #667eea; }
+        .stat-label { font-size: 21px; color: #555; margin-top: 8px; }
+
+        /* Team */
+        .team-img {
+            width: 130px; height: 130px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 48px;
+        }
+        .team-card h3 { font-size: 24px; }
+        .team-card .position { font-size: 19px; color: #667eea; font-weight: 600; }
+
+        
+        .values-section { padding: 100px 20px; background: #f8f9fa; }
+
+    
+        .footer {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 80px 60px 30px;
+            font-size: 17px;
+        }
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 50px;
+        }
+        .footer-column h3 {
+            color: #ea66d4;
+            font-size: 22px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 14px;
+            font-size: 17px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: #667eea; }
+        .social-links a {
+            font-size: 24px;
+            margin-right: 18px;
+            color: #cbd5e0;
+            transition: color 0.3s;
+        }
+        .social-links a:hover { color: #0933ec; }
+
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .copyright { font-size: 17px; }
+        .footer-language select {
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            background: #000000;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header { padding: 12px 20px; flex-direction: column; gap: 15px; }
+            .nav-links { gap: 25px; }
+            .hero-content h1 { font-size: 40px; }
+            .hero-content p { font-size: 20px; }
+            .section-title { font-size: 34px; }
+            .footer { padding: 60px 30px 30px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="/assets/Layout/Brand/logo-colored.png" alt="Logo">
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/product-detail.html">Products Detail </a></li>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/cart.html">Cart</a></li>
+        </ul>
+        <select class="language-select">
+            <option>English</option>
+            <option>Urdu</option>
+            <option>Arabic</option>
+            <option>Chinese</option>
+            <option>Japanese</option>
+            <option>Portuguese</option>
+        </select>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>About Our Company</h1>
+            <p>Leading the way in e-commerce innovation with quality products and exceptional customer service since 2025.</p>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="about-content" style="padding: 90px 20px; max-width: 1200px; margin: 0 auto;">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
+            <div class="about-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Our Mission</h3>
+                <p>To deliver the best online shopping experience with premium quality products, unbeatable prices, and outstanding customer care.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-eye"></i>
+                <h3>Our Vision</h3>
+                <p>To be the world's most trusted and innovative e-commerce platform that connects millions seamlessly.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Our Promise</h3>
+                <p>Every order is backed by honesty, quality, and a commitment to your complete satisfaction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="stats-section">
+        <h2 class="section-title">Our Achievements</h2>
+        <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto;">
+            <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">Happy Customers</div></div>
+            <div class="stat-item"><div class="stat-number">10K+</div><div class="stat-label">Products</div></div>
+            <div class="stat-item"><div class="stat-number">5+</div><div class="stat-label">Years Experience</div></div>
+            <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Team Members</div></div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team-section" style="padding: 90px 20px; background: white;">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 35px; max-width: 1200px; margin: 0 auto;">
+            <div class="team-card"><div class="team-img"><i class="fas fa-user"></i></div><h3>Sarah Johnson</h3><div class="position">CEO & Founder</div><p>Leading with passion and vision for a better tomorrow.</p></div>
+            <div class="team-card"><div class="team-img"><i class="fas fa-user"></i></div><h3>Mike Chen</h3><div class="position">CTO</div><p>Building the future of e-commerce technology.</p></div>
+            <div class="team-card"><div class="team-img"><i class="fas fa-user"></i></div><h3>Emily Davis</h3><div class="position">Marketing Director</div><p>Crafting stories that connect brands with hearts.</p></div>
+            <div class="team-card"><div class="team-img"><i class="fas fa-user"></i></div><h3>David Brown</h3><div class="position">Operations Head</div><p>Ensuring every order reaches you with a smile.</p></div>
+        </div>
+    </section>
+
+    <!-- Core Values - صرف 3 -->
+    <section class="values-section">
+        <h2 class="section-title">Our Core Values</h2>
+        <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; max-width: 1100px; margin: 0 auto;">
+            <div class="value-item">
+                <div class="value-icon" style="width:90px;height:90px;background:#667eea;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 30px;color:white;font-size:38px;">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Customer First</h3>
+                <p>Your happiness is our top priority. Always.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon" style="width:90px;height:90px;background:#667eea;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 30px;color:white;font-size:38px;">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Innovation</h3>
+                <p>We never stop improving and bringing you the best.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon" style="width:90px;height:90px;background:#667eea;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 30px;color:white;font-size:38px;">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Trust & Integrity</h3>
+                <p>We believe in honesty, transparency, and doing what’s right.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="about-us.html">Team</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul class="footer-links">
+                    <li><a href="/other-page/contact.html">Contact Us</a></li>
+                    <li><a href="Shipping.html">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchange</a></li>
+                    <li><a href="help-center.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="/other-page/about-us.html">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 Muhammad Yasir. All rights reserved.
+            </div>
+            <div class="footer-language">
+                <select>
+                    <option>English</option>
+                    <option>Urdu</option>
+                    <option>Russian</option>
+                    <option>French</option>
+                    <option>Japanese</option>
+                    <option>Portuguese</option>
+                    <option>Arabic</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Stats counter animation
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.stat-number').forEach(stat => {
+                let target = parseInt(stat.textContent.replace(/[^0-9]/g, ''));
+                let count = 0;
+                let inc = target / 70;
+                let timer = setInterval(() => {
+                    count += inc;
+                    if (count >= target) {
+                        count = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(count) + (stat.textContent.includes('+') ? '+' : '');
+                }, 30);
+            });
+        });
+    </script>
+</body>
+</html>

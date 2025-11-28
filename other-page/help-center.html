@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - Your Brand</title>
+    <link rel="icon" href="/assets/Layout/Form/input-group/Icon/control/Vector.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 14px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-icon img { height: 48px; }
+        .nav-links {
+            display: flex;
+            gap: 42px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 19px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #667eea; }
+        .language-select {
+            padding: 10px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 17px;
+            background: white;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .page-title {
+            text-align: center;
+            font-size: 48px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .page-subtitle {
+            text-align: center;
+            font-size: 22px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .search-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .search-box {
+            max-width: 700px;
+            margin: 25px auto;
+            display: flex;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 18px 25px;
+            border: none;
+            font-size: 19px;
+            outline: none;
+        }
+        .search-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0 35px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .search-btn:hover { background: linear-gradient(135deg, rgb(41, 238, 1));
+        color: rgb(231, 77, 5);
+        font-size: 20px;
+        }
+
+        /* Help Categories - 3 per row */
+        .help-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .category-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+        }
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 34px;
+        }
+        .category-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .category-card p {
+            font-size: 17px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .category-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 17px;
+        }
+        .category-link:hover { text-decoration: underline; }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            margin-bottom: 60px;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .faq-question {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            margin-top: 15px;
+            font-size: 17px;
+            color: #555;
+            display: none;
+        }
+        .faq-question i {
+            font-size: 18px;
+            color: #667eea;
+            transition: transform 0.3s;
+        }
+
+        /* Contact Options */
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .contact-option {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .contact-option:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .contact-icon {
+            font-size: 48px;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        .contact-option h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .contact-option p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #1a202c;
+            color: #e2e8f0;
+            font-size: 17px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .header { padding: 14px 20px; flex-direction: column; gap: 15px; }
+            .nav-links { gap: 25px; }
+            .page-title { font-size: 38px; }
+            .help-categories { grid-template-columns: 1fr; }
+            .contact-options { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="/assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <select class="language-select">
+            <option>English</option>
+            <option>Urdu</option>
+            <option>Arabic</option>
+            <option>German</option>
+            <option>Chinese</option>
+            <option>Japanese</option>
+        </select>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Help Center</h1>
+        <p class="page-subtitle">Find answers quickly or contact our support team anytime</p>
+
+        <!-- Search -->
+        <div class="search-section">
+            <h2>How can we help you today?</h2>
+            <div class="search-box">
+                <input type="text" placeholder="Search for answers...">
+                <button class="search-btn">Search</button>
+            </div>
+            <p style="margin-top:20px; font-size:17px;">
+                Popular: <a href="#" style="color:#667eea; margin:0 8px;">Track Order</a> • 
+                <a href="#" style="color:#667eea; margin:0 8px;">Returns</a> • 
+                <a href="#" style="color:#667eea; margin:0 8px;">Payment</a>
+            </p>
+        </div>
+
+        <!-- Categories - 3 per row -->
+        <div class="help-categories">
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h3>Orders & Shipping</h3>
+                <p>Track orders, delivery times, shipping rates</p>
+                <a href="#" class="category-link">View Articles →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-undo-alt"></i></div>
+                <h3>Returns & Refunds</h3>
+                <p>Return policy, refund status, exchanges</p>
+                <a href="#" class="category-link">View Articles →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-credit-card"></i></div>
+                <h3>Payment Methods</h3>
+                <p>Accepted payments, pricing, discounts</p>
+                <a href="#" class="category-link">View Articles →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-user-circle"></i></div>
+                <h3>Account Help</h3>
+                <p>Login issues, profile update, password reset</p>
+                <a href="#" class="category-link">View Articles →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-box-open"></i></div>
+                <h3>Products Info</h3>
+                <p>Sizes, specifications, warranty details</p>
+                <a href="#" class="category-link">View Articles →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-headset"></i></div>
+                <h3>Contact Support</h3>
+                <p>Can't find answer? Talk to our team</p>
+                <a href="contact.html" class="category-link">Get Help Now →</a>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How can I track my order? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Log in to your account → Go to "My Orders" → Click "Track Package". You’ll also receive a tracking link via email and SMS.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is your return policy? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">We offer 30-day free returns. Items must be unused with original tags. Simply start a return from your account.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long does shipping take in Pakistan? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Lahore/Karachi/Islamabad: 1-3 days<br>Other cities: 3-7 days<br>Free shipping on orders above PKR 3000</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What payment methods do you accept? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">JazzCash, Easypaisa, Bank Transfer, Credit/Debit Card, Cash on Delivery (COD) available across Pakistan.</div>
+            </div>
+        </div>
+
+        <!-- Contact Options -->
+        <div class="contact-options">
+            <div class="contact-option">
+                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <h3>Call Us</h3>
+                <p style="font-size:20px; font-weight:600;">+92 300 1234567</p>
+                <p>Mon-Sat, 9AM - 6PM</p>
+            </div>
+            <div class="contact-option">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <h3>Email Us</h3>
+                <p style="font-size:19px;">support@yourbrand.com</p>
+                <p>Reply within 24 hours</p>
+            </div>
+            <div class="contact-option">
+                <div class="contact-icon"><i class="fas fa-comments"></i></div>
+                <h3>Live Chat</h3>
+                <p>Available 24/7</p>
+                <p>Instant help in English & Urdu</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2025 Muhammad Yasir. All rights reserved.
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                const icon = q.querySelector('i');
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                } else {
+                    answer.style.display = 'block';
+                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

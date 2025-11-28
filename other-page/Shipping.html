@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Regions</title>
+    <link rel="icon" href="/assets/Layout/Form/input-group/Icon/control/Vector.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        /* Header - Same as your other pages */
+        .header {
+            background: white;
+            padding: 14px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-icon img { height: 48px; }
+        .nav-links {
+            display: flex;
+            gap: 42px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 19px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #667eea; }
+        .language-select {
+            padding: 10px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 17px;
+            background: white;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .page-title {
+            text-align: center;
+            font-size: 48px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .page-subtitle {
+            text-align: center;
+            font-size: 22px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 50px;
+            position: relative;
+        }
+        .search-box {
+            width: 100%;
+            padding: 18px 60px 18px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            outline: none;
+        }
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 22px;
+            color: #667eea;
+        }
+
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .region-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            transition: all 0.4s ease;
+        }
+        .region-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+        }
+        .card-header {
+            padding: 28px 24px;
+            color: white;
+            text-align: center;
+            font-weight: 700;
+        }
+        .card-header h2 {
+            font-size: 26px;
+            margin-bottom: 6px;
+        }
+        .card-header p {
+            font-size: 17px;
+            opacity: 0.95;
+        }
+        .stores-list {
+            padding: 25px;
+        }
+        .store-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .store-item:last-child { border-bottom: none; }
+        .store-icon {
+            width: 50px;
+            height: 50px;
+            background: #f0f2f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            color: #667eea;
+            font-size: 22px;
+        }
+        .store-info h3 {
+            font-size: 19px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        .store-info p {
+            font-size: 16px;
+            color: #666;
+        }
+        .store-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .store-link:hover { text-decoration: underline; }
+
+        /* Beautiful Gradient Headers */
+        .pakistan .card-header { background: linear-gradient(135deg, #006400 0%, #008000 100%); }
+        .middle-east .card-header { background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%); }
+        .australia .card-header { background: linear-gradient(135deg, #003087 0%, #0072CE 100%); }
+        .europe .card-header { background: linear-gradient(135deg, #002395 0%, #ED2939 100%); }
+        .north-america .card-header { background: linear-gradient(135deg, #B31942 0%, #0A3161 100%); }
+        .asia-uk .card-header { background: linear-gradient(135deg, #DE2910 0%, #00247D 100%); }
+
+        /* Footer - Simple & Clean */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #1a202c;
+            color: #e2e8f0;
+            font-size: 17px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .header { padding: 14px 20px; flex-direction: column; gap: 15px; }
+            .nav-links { gap: 25px; }
+            .page-title { font-size: 38px; }
+            .regions-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="/assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <select class="language-select">
+            <option>English</option>
+            <option>Urdu</option>
+            <option>Arabic</option>
+            <option>Spanish</option>
+            <option>German</option>
+            <option>Chinese</option>
+        </select>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Our Stores & Shipping Regions</h1>
+        <p class="page-subtitle">We deliver worldwide! Find our official stores and suppliers in your region.</p>
+
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" class="search-box" placeholder="Search by country or city...">
+        </div>
+
+        <div class="regions-grid" id="regionsGrid">
+
+            <!-- 1. Pakistan (First) -->
+            <div class="region-card pakistan">
+                <div class="card-header">
+                    <h2>Pakistan</h2>
+                    <p>Lahore, Karachi, Islamabad</p>
+                </div>
+                <div class="stores-list">
+                    <div class="store-item">
+                        <div class="store-icon"><i class="fas fa-flag"></i></div>
+                        <div class="store-info">
+                            <h3>Main Warehouse</h3>
+                            <p>Lahore, Punjab</p>
+                            <a href="#" class="store-link">yourbrand.pk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Middle East -->
+            <div class="region-card middle-east">
+                <div class="card-header">
+                    <h2>Middle East</h2>
+                    <p>UAE & Saudi Arabia</p>
+                </div>
+                <div class="stores-list">
+                    <div class="store-item">
+                        <div class="store-icon"><i class="fas fa-store"></i></div>
+                        <div class="store-info">
+                            <h3>Dubai Branch</h3>
+                            <p>Dubai, UAE</p>
+                            <a href="#" class="store-link">yourbrand.ae</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Australia -->
+            <div class="region-card australia">
+                <div class="card-header">
+                    <h2>Australia</h2>
+                    <p>Sydney & Melbourne</p>
+                </div>
+                <div class="stores-list">
+                    <div class="store-item">
+                        <div class="store-icon"><i class="fas fa-store"></i></div>
+                        <div class="store-info">
+                            <h3>Sydney Store</h3>
+                            <p>New South Wales</p>
+                            <a href="#" class="store-link">yourbrand.com.au</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Europe -->
+            <div class="region-card europe">
+                <div class="card-header">
+                    <h2>Europe</h2>
+                    <p>UK, Germany, Denmark</p>
+                </div>
+                <div class="stores-list">
+                    <div class="store-item">
+                        <div class="store-icon"><i class="fas fa-store"></i></div>
+                        <div class="store-info">
+                            <h3>London Office</h3>
+                            <p>United Kingdom</p>
+                            <a href="#" class="store-link">yourbrand.co.uk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. North America -->
+            <div class="region-card north-america">
+                <div class="card-header">
+                    <h2>North America</h2>
+                    <p>USA & Canada</p>
+                </div>
+                <div class="stores-list">
+                    <div class="store-item">
+                        <div class="store-icon"><i class="fas fa-store"></i></div>
+                        <div class="store-info">
+                            <h3>New York Hub</h3>
+                            <p>NY, United States</p>
+                            <a href="#" class="store-link">yourbrand.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Asia & UK -->
+            <div class="region-card asia-uk">
+                <div class="card-header">
+                    <h2>Asia</h2>
+                    <p>China & Singapore</p>
+                </div>
+                <div class="stores-list">
+                    <div class="store-item">
+                        <div class="store-icon"><i class="fas fa-store"></i></div>
+                        <div class="store-info">
+                            <h3>Shanghai Center</h3>
+                            <p>Shanghai, China</p>
+                            <a href="#" class="store-link">yourbrand.cn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Simple Footer -->
+    <footer class="footer">
+        © 2025 Muhammad Yasir. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const term = this.value.toLowerCase();
+            document.querySelectorAll('.region-card').forEach(card => {
+                card.style.display = card.textContent.toLowerCase().includes(term) ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

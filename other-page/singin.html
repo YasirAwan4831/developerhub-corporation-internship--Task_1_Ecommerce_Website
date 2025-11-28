@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Your Brand</title>
+    <link rel="icon" href="/assets/Layout/Form/input-group/Icon/control/Vector.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.7;
+            font-size: 18px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header - Same as all other pages */
+        .header {
+            background: white;
+            padding: 14px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-icon img { height: 48px; }
+        .nav-links {
+            display: flex;
+            gap: 42px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 19px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #667eea; }
+        .language-select {
+            padding: 10px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 17px;
+            background: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+        .login-container {
+            width: 100%;
+            max-width: 500px;
+        }
+        .login-card {
+            background: white;
+            padding: 50px 45px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            text-align: center;
+        }
+        .login-logo {
+            margin-bottom: 30px;
+        }
+        .login-logo img {
+            height: 62px;
+        }
+        .login-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        .login-subtitle {
+            font-size: 19px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* Form */
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #667eea;
+            font-size: 20px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 18px 18px 18px 55px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 17px;
+            background: #f8fafc;
+            transition: all 0.3s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+        }
+        .toggle-password {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 19px;
+            cursor: pointer;
+        }
+        .toggle-password:hover { color: #667eea; }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0 30px;
+            font-size: 16px;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+        .remember-me input { accent-color: #667eea; }
+        .forgot-password {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .forgot-password:hover { text-decoration: underline; }
+
+        .login-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 19px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        .login-btn:hover {
+            transform: translateY(-3px);
+            color: rgb(238, 8, 8);
+            background: rgb(2, 252, 97);
+            font-size: 22px;
+            box-shadow: 0 12px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .signup-link {
+            margin-top: 28px;
+            font-size: 17px;
+        }
+        .signup-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .signup-link a:hover { text-decoration: underline; }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 40px 50px 30px;
+            margin-top: auto;
+        }
+        .footer-bottom {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 25px;
+            border-top: 1px solid #4a5568;
+            font-size: 17px;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: slideIn 0.4s ease;
+        }
+        .notification.success { background: #10b981; }
+        .notification.error { background: #ef4444; }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .header { padding: 14px 20px; flex-direction: column; gap: 15px; }
+            .nav-links { gap: 25px; }
+            .login-card { padding: 40px 30px; }
+            .form-options { flex-direction: column; align-items: flex-start; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="/assets/Layout/Brand/logo-colored.png" alt="Brand Logo">
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <select class="language-select">
+            <option>English</option>
+            <option>Urdu</option>
+            <option>Arabic</option>
+            <option>Arabic</option>
+            <option>Spanish</option>
+            <option>French</option>
+            <option>German</option>
+            <option>Russian</option>
+            <option>Chinese</option>
+        </select>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-logo">
+                    <img src="/assets/Layout/Brand/logo-colored.png" alt="Logo">
+                </div>
+                <h2 class="login-title">Welcome Back!</h2>
+                <p class="login-subtitle">Sign in to continue shopping</p>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password" placeholder="Password" required>
+                        <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        Sign In <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <div class="signup-link">
+                    Don't have an account? <a href="/other-page/joinnow.html">Create Account</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div>© 2025 Muhammad Yasir. All rights reserved.</div>
+            <div>
+                <select class="language-select">
+                    <option>English</option>
+                    <option>Urdu</option>
+                    <option>Arabic</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                    <option>German</option>
+                    <option>Russian</option>
+                    <option>Chinese</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('loginForm');
+            const toggleBtn = document.querySelector('.toggle-password');
+            const passwordField = document.getElementById('password');
+            const emailField = document.getElementById('email');
+
+            // Toggle Password Visibility
+            toggleBtn.addEventListener('click', function() {
+                const type = passwordField.type === 'password' ? 'text' : 'password';
+                passwordField.type = type;
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+
+            // Remember Me - Load saved email
+            const savedEmail = localStorage.getItem('rememberedEmail');
+            if (savedEmail) {
+                emailField.value = savedEmail;
+                document.getElementById('rememberMe').checked = true;
+            }
+
+            // Form Submit
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = emailField.value.trim();
+                const password = passwordField.value;
+                const remember = document.getElementById('rememberMe').checked;
+
+                if (!email || !password) {
+                    showNotification('Please fill all fields', 'error');
+                    return;
+                }
+
+                if (remember) {
+                    localStorage.setItem('rememberedEmail', email);
+                } else {
+                    localStorage.removeItem('rememberedEmail');
+                }
+
+                showNotification('Login Successful!', 'success');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1800);
+            });
+
+            function showNotification(msg, type) {
+                const existing = document.querySelector('.notification');
+                if (existing) existing.remove();
+
+                const div = document.createElement('div');
+                div.className = `notification ${type}`;
+                div.innerHTML = `${msg}`;
+                document.body.appendChild(div);
+
+                setTimeout(() => div.remove(), 4000);
+            }
+        });
+    </script>
+</body>
+</html>

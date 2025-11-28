@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Your Brand</title>
+    <link rel="icon" href="/assets/Layout/Form/input-group/Icon/control/Vector.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.7;
+            font-size: 18px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header - Same as other pages */
+        .header {
+            background: white;
+            padding: 14px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-icon img { height: 48px; }
+        .nav-links {
+            display: flex;
+            gap: 42px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 19px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #667eea; }
+        .language-select {
+            padding: 10px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 17px;
+            background: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+        .signup-container {
+            width: 100%;
+            max-width: 500px;
+        }
+        .signup-card {
+            background: white;
+            padding: 45px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        .signup-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .signup-logo img {
+            height: 60px;
+        }
+        .signup-title {
+            font-size: 34px;
+            font-weight: 800;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        .signup-subtitle {
+            font-size: 19px;
+            text-align: center;
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        /* Form */
+        .form-group {
+            position: relative;
+            margin-bottom: 22px;
+        }
+        .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #667eea;
+            font-size: 20px;
+            z-index: 2;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 16px 18px 16px 52px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 17px;
+            background: #f8fafc;
+            transition: all 0.3s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+        }
+        .name-row {
+            display: flex;
+            gap: 18px;
+        }
+        .name-row .form-group { flex: 1; }
+
+        .toggle-password {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 19px;
+            cursor: pointer;
+        }
+        .toggle-password:hover { color: #667eea; }
+
+        .terms-condition {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 25px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .terms-condition input { margin-top: 4px; accent-color: #667eea; }
+        .terms-condition a { color: #667eea; text-decoration: none; }
+        .terms-condition a:hover { text-decoration: underline; }
+
+        .signup-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 19px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .signup-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 17px;
+        }
+        .login-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .login-link a:hover { text-decoration: underline; }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 40px 50px 30px;
+            margin-top: auto;
+        }
+        .footer-bottom {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 25px;
+            border-top: 1px solid #4a5568;
+            font-size: 17px;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: slideIn 0.4s ease;
+        }
+        .notification.success { background: #10b981; }
+        .notification.error { background: #ef4444; }
+        .notification i { font-size: 22px; }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .header { padding: 14px 20px; flex-direction: column; gap: 15px; }
+            .nav-links { gap: 25px; }
+            .name-row { flex-direction: column; gap: 20px; }
+            .signup-card { padding: 35px 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="/assets/Layout/Brand/logo-colored.png" alt="">
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <select class="language-select">
+            <option>English</option>
+            <option>Urdu</option>
+            <option>Arabic</option> 
+            <option>Japanese</option> 
+            <option>Russian</option>
+            <option>French</option> 
+            <option>Chinese</option>
+        </select>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="signup-container">
+            <div class="signup-card">
+                <div class="signup-logo">
+                    <img src="/assets/Layout/Brand/logo-colored.png" alt="Logo">
+                </div>
+                <h2 class="signup-title">Create Your Account</h2>
+                <p class="signup-subtitle">Join us and start shopping today!</p>
+
+                <form id="signupForm">
+                    <div class="name-row">
+                        <div class="form-group">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="firstName" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="lastName" placeholder="Last Name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password" placeholder="Create Password" required>
+                        <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                    </div>
+
+                    <div class="terms-condition">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="signup-btn">Create Account</button>
+                </form>
+
+                <div class="login-link">
+                    Already have an account? <a href="singin.html">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div>© 2025 Muhammad Yasir. All rights reserved.</div>
+            <div>
+                <select class="language-select">
+                    <option>English</option>
+                    <option>Urdu</option>
+                    <option>Arabic</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('signupForm');
+            const toggles = document.querySelectorAll('.toggle-password');
+
+            toggles.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const input = this.previousElementSibling;
+                    const icon = this.querySelector('i');
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        icon.classList.replace('fa-eye', 'fa-eye-slash');
+                    } else {
+                        input.type = 'password';
+                        icon.classList.replace('fa-eye-slash', 'fa-eye');
+                    }
+                });
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                const confirm = document.getElementById('confirmPassword').value;
+
+                if (!firstName || !lastName || !email || !password) {
+                    showNotification('Please fill all fields', 'error');
+                    return;
+                }
+                if (password.length < 6) {
+                    showNotification('Password must be 6+ characters', 'error');
+                    return;
+                }
+                if (password !== confirm) {
+                    showNotification('Passwords do not match', 'error');
+                    return;
+                }
+
+                showNotification('Account created successfully!', 'success');
+                setTimeout(() => {
+                    window.location.href = '/other-page/singin.html';
+                }, 2000);
+            });
+
+            function showNotification(msg, type) {
+                const existing = document.querySelector('.notification');
+                if (existing) existing.remove();
+
+                const div = document.createElement('div');
+                div.className = `notification ${type}`;
+                div.innerHTML = `<i class="fas ${type==='success'?'fa-check-circle':'fa-exclamation-circle'}"></i> ${msg}`;
+                document.body.appendChild(div);
+
+                setTimeout(() => div.remove(), 4000);
+            }
+        });
+    </script>
+</body>
+</html>
