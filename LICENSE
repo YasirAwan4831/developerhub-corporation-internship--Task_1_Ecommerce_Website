@@ -1,6 +1,7 @@
 Copyright (c) 2025
 DeveloperHub Corporation — Frontend Development Internship
 Project: Task 1 — Ecommerce Website
+Supervisor: Sir Faizan Khan
 Developed by: Muhammad Yasir (Frontend Developer - Intern)
 Location: Haripur, KPK, Pakistan
 
@@ -9,18 +10,18 @@ Location: Haripur, KPK, Pakistan
 ------------------------------------------------------------
 
 Permission is hereby granted to any individual, student, developer, 
-or organization to view, study, and clone this repository for learning 
+or organization to view, study and clone this repository for learning 
 and educational purposes under the following conditions:
 
 1. This project was created as part of the **DeveloperHub Corporation 
-   Frontend Development Internship Program**, and full development 
+   Frontend Development Internship Program** and full development 
    credit belongs to the intern developer mentioned above.
 
 2. Redistribution, modification, or reuse of this source code is allowed 
-   ONLY for educational, portfolio-building, personal learning, or 
+   ONLY for educational, portfolio-building, personal learning or 
    skill-development purposes.
 
-3. Commercial use (including selling, reselling, packaging, or integrating 
+3. Commercial use (including selling, reselling, packaging or integrating 
    in paid products/services) is NOT permitted without written permission 
    from the developer (Muhammad Yasir) or DeveloperHub Corporation.
 
@@ -29,13 +30,14 @@ and educational purposes under the following conditions:
    as follows:
 
    "This project includes components originally developed by 
-    Muhammad Yasir during the DeveloperHub Corporation Internship (2025)."
+    Muhammad Yasir during the DeveloperHub Corporation Internship (2025).
+    Supervisor By Sir Faizan Khan"
 
 5. Any forks or redistributions MUST retain this LICENSE file without 
    modification, ensuring credit to the original author.
 
 6. This project is provided "AS IS" without warranty of any kind. The 
-   developer is not responsible for any issues, damages, or unexpected 
+   developer is not responsible for any issues, damages or unexpected 
    behavior caused by using this project or its components.
 
 ------------------------------------------------------------
@@ -46,7 +48,7 @@ This project was built entirely by **Muhammad Yasir** as the first official
 task of the **DeveloperHub Corporation Frontend Development Internship**.  
 The project demonstrates:
 
-- Modern HTML, CSS, and JavaScript structuring  
+- Modern HTML, CSS and JavaScript structuring  
 - Multi-page ecommerce website architecture  
 - Responsive layout and UI development  
 - Navigation and page linking  
@@ -55,6 +57,6 @@ The project demonstrates:
 - Professional development practices  
 
 The developer reserves the right to showcase this work as part of their 
-portfolio, resume, GitHub profile, professional CV and future employment 
+portfolio, resume, GitHub profile professional CV and future employment 
 applications.
 
